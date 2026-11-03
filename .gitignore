@@ -1,0 +1,13 @@
+# Build directories
+build/
+cmake-build-*/
+out/
+
+# macOS
+.DS_Store
+*.xcodeproj
+*.xcworkspace
+xcuserdata/
+
+# External dependencies (cloned via submodule or CMake)
+external/JUCE/
