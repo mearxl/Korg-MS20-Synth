@@ -1,6 +1,11 @@
 cmake_minimum_required(VERSION 3.22)
 
-project(KorgMS20 VERSION 1.0.0 LANGUAGES C CXX OBJC OBJCXX)
+project(KorgMS20 VERSION 1.0.0 LANGUAGES C CXX)
+
+if(APPLE)
+    enable_language(OBJC)
+    enable_language(OBJCXX)
+endif()
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)

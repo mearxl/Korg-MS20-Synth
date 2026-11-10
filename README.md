@@ -27,14 +27,23 @@ A component-level circuit-modeled software synthesizer recreation of the classic
 
 ## Building
 
+### macOS (Xcode / Ninja)
 ```bash
 git clone --depth 1 --branch 8.0.4 https://github.com/juce-framework/JUCE.git external/JUCE
 cmake -B build -G Xcode
 cmake --build build --config Release --target KorgMS20_All
 ```
 
-### Targets Built
-- **Standalone App:** `build/KorgMS20_artefacts/Release/Standalone/Korg MS-20.app`
-- **AUv3 App Extension:** `build/KorgMS20_artefacts/Release/AUv3/Korg MS-20.appex`
-- **Audio Unit (AUv2):** `build/KorgMS20_artefacts/Release/AU/Korg MS-20.component`
-- **VST3:** `build/KorgMS20_artefacts/Release/VST3/Korg MS-20.vst3`
+### Windows (Visual Studio 2022)
+```cmd
+git clone --depth 1 --branch 8.0.4 https://github.com/juce-framework/JUCE.git external/JUCE
+cmake -B build -G "Visual Studio 17 2022" -A x64
+cmake --build build --config Release --target KorgMS20_VST3
+```
+
+The resulting `Korg MS-20.vst3` bundle will be created in `build/KorgMS20_artefacts/Release/VST3/` and can be copied directly to your VST3 folder (`C:\Program Files\Common Files\VST3\`).
+
+### Targets
+- **VST3 Plugin (Windows & macOS):** `build/KorgMS20_artefacts/Release/VST3/Korg MS-20.vst3`
+- **Standalone App (Windows & macOS):** `build/KorgMS20_artefacts/Release/Standalone/`
+- **Audio Unit & AUv3 (macOS / iOS only):** `AU/` and `AUv3/`
